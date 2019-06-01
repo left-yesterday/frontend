@@ -1,0 +1,149 @@
+.text-login{
+  font-family: NotoSansCJKkr;
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+}
+
+.my-Closet {
+  /* width: 82px; */
+  /* height: 17px; */
+  font-family: godoRounded-R;
+  font-size: 24px;
+  font-weight: normal;
+  /* font-style: normal; */
+  font-stretch: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+  box-shadow: 0 0 black;
+}
+
+.Rectangle {
+  width: 432px;
+  height: 43px;
+  opacity: 0.3;
+  border-radius: 3px;
+  background-color: #c8d3dc;
+}
+
+.text-notice {
+  width: 140px;
+  height: 12px;
+  font-family: NotoSansCJKkr;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #21add5;
+}
+
+.btn-common {
+  width: 207px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: #129fdd;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap&subset=korean');
+
+@font-face{
+font-family: 'godoRounded-R';
+src: url('../font/godoRounded\ R.ttf');
+}
+
+*{
+font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+background-color: #fafafa;
+}
+
+body {
+margin-top: 0;
+margin-left: 0;
+}
+
+.header {
+height: 100px;
+width: 100vw;
+position: fixed;
+margin: 0; padding: 0;
+background-color: #1991eb;
+color: #fafafa;
+}
+
+.header .top {
+height: 40px;
+width: 100vw;
+}
+
+.header .bottom {
+height: 60px;
+width: 100vw;
+margin-left: 46px;
+}
+
+.header .logo {
+color: #fafafa;
+font-family: 'Noto Sans KR', sans-serif;
+}
+
+.header .logo .godo-r-font {
+font-family: 'godoRounded-R' !important;
+font-size: 24pt;
+}
+
+.header .left {
+float: left;
+margin-left: 46px;
+margin-top: 16px;
+}
+
+.header .right-icon {
+float: right;
+margin-right: 46px;
+margin-top: 31px;
+z-index: 9999;
+}
+
+.header .right-icon img {
+padding-left: 20px;
+}
+
+.header .padding-med-right {
+padding-right: 20px;
+}
+
+.header .menu-font {
+font-size: 12pt;
+line-height: 20px;
+vertical-align: middle;
+height: 20px !important;
+}
+
+.header .menu-font #text {
+font-size: 12pt;
+line-height: 20px;
+height: 20px;
+}
+
+
+.base {
+  width: 196px;
+  height: 226px;
+  opacity: 0.9;
+  border-radius: 10px;
+  background-color: #295786;
+}
+
