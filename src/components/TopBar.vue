@@ -15,6 +15,7 @@
     <div class="bottom">
       <span class="padding-med-right menu-font"><img src="@/assets/img/icons8-upload-to-cloud-52.png" width="25px" height="20px" />&nbsp; 상품 등록</span>
       <span class="padding-med-right menu-font"><img src="@/assets/img/icons8-upload-to-cloud-52.png" width="25px" height="20px" />&nbsp; 상품 등록</span>
+      <input class="padding-med-right menu-font searchinput" type="text" placeholder="검색..."/>
     </div>
   </div>
 </template>

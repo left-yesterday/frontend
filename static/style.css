@@ -1,38 +1,113 @@
-.text-login{
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap&subset=korean');
+
+.notice_content {
+  display: inline-flex;
+}
+
+.notice_content img {
+  padding: 10px;
+}
+
+#close_btn {
+  float: right !important;
+  text-align: right;
+  margin-left: 180px;
+  padding: 12px;
+}
+
+.noticebox {
+  width: 499px;
+  height: 34px;
+  border-radius: 4px;
+  background-color: #1991eb;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 92px;
+}
+
+.noticemsg {
+  height: 13px;
+  font-family: NotoSansCJKkr;
+  font-size: 12.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  margin-left: 11px;
+}
+
+.box {
+  width: 500px;
+  height: 530px;
+  box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.1), 0px 26px 30px 0 rgba(0, 0, 0, 0.15), 0px 28px 45px 0 rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 20px;
+}
+
+.box_logo {
+  height: 17px;
+  font-family: glogo;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+  margin-left: 36px;
+  padding-top: 50px;
+}
+
+.box_title {
+  height: 22px;
   font-family: NotoSansCJKkr;
   font-size: 24px;
   font-weight: 300;
+  font-style: normal;
   font-stretch: normal;
   line-height: 1.83;
   letter-spacing: normal;
   text-align: left;
   color: #212121;
+  margin-left: 36px;
+  margin-top: 8px;
 }
 
-.my-Closet {
-  /* width: 82px; */
-  /* height: 17px; */
-  font-family: godoRounded-R;
-  font-size: 24px;
-  font-weight: normal;
-  /* font-style: normal; */
+.box_desc {
+  height: 22px;
+  font-family: NotoSansCJKkr;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
   font-stretch: normal;
   line-height: 1.83;
   letter-spacing: normal;
   text-align: left;
   color: #212121;
-  box-shadow: 0 0 black;
+  margin-left: 36px;
+  margin-top: 8px;
 }
 
-.Rectangle {
+.input_box {
   width: 432px;
   height: 43px;
   opacity: 0.3;
   border-radius: 3px;
   background-color: #c8d3dc;
+  margin-left: 35px;
+  margin-top: 21px;
 }
 
-.text-notice {
+.input_link {
   width: 140px;
   height: 12px;
   font-family: NotoSansCJKkr;
@@ -44,100 +119,108 @@
   letter-spacing: normal;
   text-align: right;
   color: #21add5;
+  float: right;
+  margin-right: 33px;
+  margin-top: 5px;
 }
 
-.btn-common {
+.btn_common {
   width: 207px;
   height: 43px;
   border-radius: 3px;
   background-color: #129fdd;
+  border: none;
+  margin-left: 152px;
+  margin-top: 140px;
+  color: #FFF
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap&subset=korean');
-
-@font-face{
-font-family: 'godoRounded-R';
-src: url('../font/godoRounded\ R.ttf');
+.btn_common2 {
+  width: 207px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: #129fdd;
+  border: none;
+  margin-left: 152px;
+  margin-top: 20px;
+  color: #FFF
 }
 
 *{
-font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 html {
-background-color: #fafafa;
+  background-color: #fafafa;
 }
 
 body {
-margin-top: 0;
-margin-left: 0;
+  margin-top: 0;
+  margin-left: 0;
 }
 
 .header {
-height: 100px;
-width: 100vw;
-position: fixed;
-margin: 0; padding: 0;
-background-color: #1991eb;
-color: #fafafa;
+  height: 100px;
+  width: 100vw;
+  position: relative;
+  margin: 0; padding: 0;
+  background-color: #1991eb;
+  color: #fafafa;
 }
 
 .header .top {
-height: 40px;
-width: 100vw;
+  height: 40px;
+  width: 100vw;
 }
 
 .header .bottom {
-height: 60px;
-width: 100vw;
-margin-left: 46px;
+  height: 60px;
+  margin-left: 46px;
 }
 
 .header .logo {
-color: #fafafa;
-font-family: 'Noto Sans KR', sans-serif;
+  color: #fafafa;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .header .logo .godo-r-font {
-font-family: 'godoRounded-R' !important;
-font-size: 24pt;
+  font-family: glogo !important;
+  font-size: 24pt;
 }
 
 .header .left {
-float: left;
-margin-left: 46px;
-margin-top: 16px;
+  float: left;
+  margin-left: 46px;
+  margin-top: 16px;
 }
 
 .header .right-icon {
-float: right;
-margin-right: 46px;
-margin-top: 31px;
-z-index: 9999;
+  float: right;
+  margin-right: 46px;
+  margin-top: 31px;
+  z-index: 9999;
 }
 
 .header .right-icon img {
-padding-left: 20px;
+  padding-left: 20px;
 }
 
 .header .padding-med-right {
-padding-right: 20px;
+  padding-right: 20px;
 }
 
 .header .menu-font {
-font-size: 12pt;
-line-height: 20px;
-vertical-align: middle;
-height: 20px !important;
+  font-size: 12pt;
+  line-height: 20px;
+  vertical-align: middle;
+  height: 20px !important;
 }
 
 .header .menu-font #text {
-font-size: 12pt;
-line-height: 20px;
-height: 20px;
+  font-size: 12pt;
+  line-height: 20px;
+  height: 20px;
 }
-
 
 .base {
   width: 196px;
@@ -145,5 +228,377 @@ height: 20px;
   opacity: 0.9;
   border-radius: 10px;
   background-color: #295786;
+}
+
+.main {
+  margin-left: 45px;
+  margin-top: 45px;
+}
+
+.main_title {
+  width: 350px;
+  height: 19px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+}
+
+.main_subtitle {
+  height: 13px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+}
+
+.grid {
+  display: inline-flex;
+}
+
+.block {
+  position: relative;
+  width: 197px;
+  height: 226px;
+  opacity: 0.9;
+  border-radius: 10px;
+  background-color: #295786;
+  padding-top: 100px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.block_cnt {
+  width: 26px;
+  height: 35px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 46px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  margin-top: 150px;
+  margin-left: 19px;
+}
+
+.block_set {
+  width: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff; 
+  float: left;
+}
+
+.mg-tp-170 {
+  margin-top: 170px;
+}
+
+.block_det {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff; 
+  float: right;
+  margin-right: 45px;
+  margin-top: 135px;
+}
+
+.block_is_available {
+  height: 8px;
+  font-family: NotoSansCJKkr;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #12aaeb;
+}
+
+.searchbox {
+  width: 314px;
+  height: 552px;
+  opacity: 0.9;
+  border-radius: 10px;
+  background-color: #295786;
+  margin-top: 15px;
+}
+
+.search_result {
+  position: absolute;
+  height: 13px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #212121;
+  margin-left: 345px;
+}
+
+.result_blocks {
+  display: inline-flex;
+}
+
+.result_block {
+  position: relative;
+  float: left;
+  width: 197px;
+  height: 410px;
+  opacity: 0.9;
+  border-radius: 10px;
+  background-color: #295786;
+  margin-right: 20px;
+}
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.info-container {
+  margin-left: 48px;
+  display: flex;
+}
+
+.info-margin {
+  margin-left: 48px;
+}
+
+.info-title {
+  margin-top: 53px;
+  width: 100%;
+}
+
+.info-title #title {
+  /* float: left; */
+}
+
+.info-title #stat {
+  /* float: right; */
+  background-color: #fdfefe;
+  height: 65px;
+  /* width: 206px; */
+  /* margin-right: 31px; */
+  border-radius: 10px;
+}
+
+.info-title #title h3 {
+  font-size: 23px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #282828;
+}
+
+.info-title #title p {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+  color: #12aaeb;
+}
+
+.flex-3 {
+  flex: 1.5;
+}
+
+.vertical-container {
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.stat-light {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #12aeeb;
+  font-weight: 900;
+}
+
+.stat-small {
+  font-size: 9px;
+  font-weight: 300;
+}
+
+.item-info {
+  margin-top: 20px;
+}
+
+.item-info-left {
+  float: left;
+}
+
+.item-info-right {
+  float: right;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.span-size-info{
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.margin-r-l{
+  margin-right: 40px;
+}
+
+.margin-t-li{
+  margin-top: 10px;
+}
+
+.d-line{
+  display: inline;
+}
+
+.bar {
+  width: 180px;
+  height: 8px;
+  opacity: 0.43;
+  border-radius: 50px;
+  background-color: #12aaeb;
+  position: absolute;
+  z-index: 1000;
+}
+
+.bar-base {
+  width: 180px;
+  height: 8px;
+  opacity: 0.43;
+  border-radius: 50px;
+  background-color: #5682b2;
+  position: absolute;
+  z-index: 999;
+}
+
+.bar-ellipse {
+  width: 13px;
+  height: 13px;
+  background-color: #12aaeb;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 90px;
+  z-index: 1500;
+}
+
+.bar-text {
+  font-size: 13px;
+  color: #212121;
+  margin-bottom: 30px;
+}
+
+.bar-over-text{
+  position: absolute;
+  z-index: 2000;
+  color: #fafafa;
+  background-color: #12aaeb;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 11px;
+  margin-left: 75px;
+}
+
+#cald {
+  margin-top: 110px;
+  border-radius: 10px;
+  height: 550px;
+  width: 550px;
+  background-image: url('../img/hunters-race-408744-unsplash.png');
+}
+
+.bd-rad-10 {
+  border-radius: 10px;
+}
+
+.mg-left-li{
+  margin-left: 15px;
+}
+
+.mg-left-m{
+  margin-left: 25px;
+}
+
+.bg-black {
+  background-color: #212121;
+  color: #fafafa;
+}
+
+.searchinput {
+  width: 385px;
+  height: 38px;
+  opacity: 0.3;
+  border-radius: 3px;
+  background-color: #c8d3dc;
+}
+
+.input_select {
+  width: 175px;
+  height: 33px;
+  border-radius: 3px;
+  background-color: #5682b2;
+}
+
+.labeled_text {
+  width: 51px;
+  height: 12px;
+  font-family: NotoSansCJKkr;
+  font-size: 11.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #bfccd5;
 }
 

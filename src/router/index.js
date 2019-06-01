@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/pages/Login'
+import SignIn from '@/pages/SignIn'
+import SignUp from '@/pages/SignUp'
 import Main from '@/pages/Main'
+import Search from '@/pages/Search'
+import Item from '@/pages/Item'
+import registItem from '@/pages/registItem'
 
 Vue.use(Router)
 
@@ -9,14 +13,34 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Login',
-      component: Login
+      path: '/auth/signin',
+      name: 'SignIn',
+      component: SignIn
     },
     {
-      path: '/main',
+      path: '/auth/signup',
+      name: 'SignUp',
+      component: SignUp
+    },
+    {
+      path: '/',
       name: 'Main',
       component: Main
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
+    },
+    {
+      path: '/item',
+      name: 'Item',
+      component: Item
+    },
+    {
+      path: '/regist/item',
+      name: 'registItem',
+      component: registItem
     }
   ]
 })
