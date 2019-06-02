@@ -602,3 +602,137 @@ body {
   color: #bfccd5;
 }
 
+.input_set {
+  width: 300px;
+}
+
+.ml-100 {
+  margin-left: 100px;
+}
+
+.input_box2 {
+  width: 300px;
+  height: 33px;
+  border-radius: 3px;
+  background-color: #c8d3dc;
+}
+
+.text_box {
+  width: 300px;
+  height: 195px;
+  border-radius: 3px;
+  background-color: #c8d3dc;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap&subset=korean');
+
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+html{
+  background-color: #fafafa;
+}
+
+.tooltip-btn {
+  width: 85px;
+  height: 35px;
+  box-shadow: 0px 5px 12px 0 rgba(0, 156, 255, 0.5), inset 0 0 1px 0 rgba(0, 0, 0, 0.35);
+  border-image-source: linear-gradient(to top, #009cff, #ffffff);
+  border-image-slice: 1;
+  background-color: #009cff;
+  border-radius: 50px;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+
+body{
+  margin: 0;
+}
+
+#wrapper {
+  margin-left: 46px;
+  margin-top: 50px;
+}
+
+#sidebar {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 15px;
+  padding: 2px;
+  background-color: #ffffff;
+}
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.profile-section {
+  margin-top: 32px;
+  margin-left: 24px;
+  height: 50px;
+  width: 100%;
+}
+
+.vertical-container {
+  height: 100%;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.tooltip-btn-red {
+  width: 85px;
+  height: 35px;
+  box-shadow: 0px 5px 12px 0 rgba(255, 0, 0, 0.5), inset 0 0 1px 0 rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border-image-source: linear-gradient(to top, #ff0000, #ffffff);
+  border-image-slice: 1;
+  background-color: #ff0036;
+  border-radius: 50px;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
