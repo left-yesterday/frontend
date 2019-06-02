@@ -2,50 +2,22 @@
   <div>
     <TopBar/>
     <div class="main">
-    <h2 class="main_title">일치하는 4건의 상품을 찾았습니다!</h2><br>
+    <h2 class="main_title">일치하는 {{dataList.length}}건의 상품을 찾았습니다!</h2><br>
       <div class="grid">
         <div class="resultset">
           <div class="result_blocks">
-            <div class="result_block">
+            <template v-for="(data, i) in dataList">
+            <a v-bind:href="'/item/'+data.it_id"  v-bind:key="data.it_id"><div class="result_block" v-bind:style="{ 'background-image': 'url(' + data.image + ')' }">
               <div class="block_set mg-tp-170">
                 <div class="block_det">
-                  <p class="block_is_available">거래가능</p>
-                  <p class="block_is_available2">신사용 양복 1SET</p>
-                  <p class="block_is_available">구로디지털단지 000호</p>
+                  <p class="block_is_available" v-if="data.available==1">거래가능</p>
+                  <p class="block_is_available" v-else>거래불가</p>
+                  <p class="block_is_available2">{{ data.name }}</p>
+                  <p class="block_is_available">{{ data.location || '없음' }}</p>
                 </div>
-                <p class="block_cnt">4</p>
+                <p class="block_cnt">{{i+1}}</p>
               </div>
-            </div>
-            <div class="result_block">
-              <div class="block_set mg-tp-170">
-                <div class="block_det">
-                  <p class="block_is_available">거래가능</p>
-                  <p class="block_is_available2">신사용 양복 1SET</p>
-                  <p class="block_is_available">구로디지털단지 000호</p>
-                </div>
-                <p class="block_cnt">4</p>
-              </div>
-            </div>
-            <div class="result_block">
-              <div class="block_set mg-tp-170">
-                <div class="block_det">
-                  <p class="block_is_available">거래가능</p>
-                  <p class="block_is_available2">신사용 양복 1SET</p>
-                  <p class="block_is_available">구로디지털단지 000호</p>
-                </div>
-                <p class="block_cnt">4</p>
-              </div>
-            </div>
-            <div class="result_block">
-              <div class="block_set mg-tp-170">
-                <div class="block_det">
-                  <p class="block_is_available">거래가능</p>
-                  <p class="block_is_available2">신사용 양복 1SET</p>
-                  <p class="block_is_available">구로디지털단지 000호</p>
-                </div>
-                <p class="block_cnt">4</p>
-              </div>
-            </div>
+            </div></a></template>
           </div>
         </div>
       </div>
@@ -55,6 +27,7 @@
 
 <script>
 import TopBar from '@/components/TopBar'
+import axios from 'axios'
 
 export default {
   name: 'Search',
@@ -63,13 +36,21 @@ export default {
   },
   data () {
     return {
+      dataList: []
     }
   },
   created(){
+    this.fetchData()
   },
   mounted(){
   },
   methods: {
+    fetchData: function () {
+      axios.get('http://tg-test-dev.ap-northeast-2.elasticbeanstalk.com/v1/item/search?name='+this.$route.query.q)
+        .then(res => {
+          this.dataList = res.data.dataList
+        })
+    }
   }
 }
 </script>

@@ -1,4 +1,6 @@
 <template>
+<div>
+  <TopBar/>
   <div id="wrapper" class="flex-container">
     <div id="sidebar" style="flex: 0.5; height: calc(95vh - 50px);">
       <div class="profile-section" style="margin-bottom: 36px;">
@@ -66,11 +68,17 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import TopBar from '@/components/TopBar'
+
 export default {
   name: 'Dashboard',
+  components: {
+    TopBar
+  },
   data () {
     return {
     }

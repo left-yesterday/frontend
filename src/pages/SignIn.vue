@@ -37,14 +37,14 @@ export default {
     }
   },
   created(){
+    this.tokenChk()
   },
   mounted(){
   },
   methods: {
-    signin: function(){
+    signin: function () {
       const email = this.email
       const password = this.password
-
       var qs = {
         email: email,
         password: password
@@ -54,11 +54,25 @@ export default {
           if(res.data.code == 200){
             alert(res.data.status);
             console.log(res.data)
+            document.cookie = `authUser=${email};path=/`
+            document.cookie = `authCheck=1;path=/`
             window.location.href = '/'
           }else{
             alert(res.data.status);
           }
         })
+    },
+    tokenChk: function () {
+      var authUser = this.getCookie('authUser')
+      var authCheck = this.getCookie('authCheck')
+      if (Number(authCheck) == 1 && authUser) {
+        alert('USER ALREADY SIGNED IN!')
+        window.location.href = '/'
+      }
+    },
+    getCookie: function (name) {
+      var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)')
+      return value ? value[2] : null
     }
   }
 }

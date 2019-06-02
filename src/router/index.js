@@ -8,6 +8,7 @@ import Item from '@/pages/Item'
 import registItem from '@/pages/registItem'
 import userRentaled from '@/pages/userRentaled'
 import Dashboard from '@/pages/Dashboard'
+import NotFound from '@/pages/NotFound'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/user',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 })
