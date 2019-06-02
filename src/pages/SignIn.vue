@@ -10,26 +10,30 @@
     <div class="box">
       <h2 class="box_logo">my closet</h2>
       <h2 class="box_title">로그인</h2>
-      <form action="">
+      <form action="" v-on:submit.prevent="signin">
         <div class="input_set">
-          <input class="input_box" type="email" name="email" required placeholder="EMAIL"/><br>
+          <input class="input_box" type="email" v-model="email" required placeholder="EMAIL"/><br>
           <a class="input_link">이메일을 잊어버리셨나요?</a>
         </div>
         <div class="input_set">
-          <input class="input_box" type="password" name="password" required placeholder="PASSWORD"/><br>
+          <input class="input_box" type="password" v-model="password" required placeholder="PASSWORD"/><br>
           <a class="input_link">암호를 잊어버리셨나요?</a>
         </div>
-        <button class="btn_common">로그인</button>
+        <button class="btn_common" type="button" v-on:click="signin">로그인</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'SignIn',
   data () {
     return {
+      email: '',
+      password: ''
     }
   },
   created(){
@@ -37,6 +41,25 @@ export default {
   mounted(){
   },
   methods: {
+    signin: function(){
+      const email = this.email
+      const password = this.password
+
+      var qs = {
+        email: email,
+        password: password
+      }
+      axios.post('http://tg-test-dev.ap-northeast-2.elasticbeanstalk.com/v1/auth/signin', qs)
+        .then(res => {
+          if(res.data.code == 200){
+            alert(res.data.status);
+            console.log(res.data)
+            window.location.href = '/'
+          }else{
+            alert(res.data.status);
+          }
+        })
+    }
   }
 }
 </script>

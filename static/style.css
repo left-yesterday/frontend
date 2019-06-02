@@ -713,15 +713,6 @@ body{
   width: 100%;
 }
 
-.vertical-container {
-  height: 100%;
-  display: -webkit-flex;
-  display:         flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-}
 
 .tooltip-btn-red {
   width: 85px;

@@ -5,89 +5,19 @@
       <h1 class="main_title">OOO님! 주변에 양복 4개가 신청이 가능합니다.</h1>
       <h2 class="main_subtitle">양복</h2>
       <div class="grid">
-        <div class="block">
+        <template v-for="(data, i) in dataList" >
+        <a v-bind:href="'/item/'+data.it_id"  v-bind:key="data.it_id"><div class="block" v-bind:style="{ 'background-image': 'url(' + data.image + ')' }">
           <div class="block_set">
             <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
+              <p class="block_is_available" v-if="data.available==1">거래가능</p>
+              <p class="block_is_available" v-else>거래불가</p>
+              <p class="block_is_available2">{{ data.name }}</p>
+              <p class="block_is_available">{{ data.location || '없음' }}</p>
             </div>
-            <p class="block_cnt">4</p>
+            <p class="block_cnt">{{i+1}}</p>
           </div>
-        </div>
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
-      </div>
-      <h2 class="main_subtitle">양복</h2>
-      <div class="grid">
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
-        <div class="block">
-          <div class="block_set">
-            <div class="block_det">
-              <p class="block_is_available">거래가능</p>
-              <p class="block_is_available2">신사용 양복 1SET</p>
-              <p class="block_is_available">구로디지털단지 000호</p>
-            </div>
-            <p class="block_cnt">4</p>
-          </div>
-        </div>
+        </div></a>
+        </template>
       </div>
     </div>
     <vue-daum-map
@@ -118,6 +48,7 @@
 <script>
 import TopBar from '@/components/TopBar'
 import VueDaumMap from 'vue-daum-map'
+import axios from 'axios'
 export default {
   name: 'Main',
   components : {
@@ -131,11 +62,13 @@ export default {
       level: 3, // 지도의 레벨(확대, 축소 정도),
       mapTypeId: VueDaumMap.MapTypeId.NORMAL, // 맵 타입
       libraries: [], // 추가로 불러올 라이브러리
-      map: null // 지도 객체. 지도가 로드되면 할당됨.
+      map: null, // 지도 객체. 지도가 로드되면 할당됨.,
+      dataList:[]
     }
   },
   created(){
     //this.alpha()
+    this.fetchData()
   },
   mounted(){
 
@@ -143,6 +76,16 @@ export default {
   methods: {
     onLoad (map) {
       this.map = map
+    },
+    fetchData: function (){
+      axios.get('http://tg-test-dev.ap-northeast-2.elasticbeanstalk.com/v1/list')
+        .then(res => {
+          if(res.data.code == 200){
+            this.dataList = res.data.dataList
+          }else{
+            alert(res.data.status);
+          }
+        })
     }
   }
 }

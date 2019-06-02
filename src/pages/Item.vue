@@ -7,8 +7,8 @@
           <div class="info-title">
             <div class="flex-container">
               <div id="title" class="flex-2">
-                <h3>남성용 정장 1SET</h3>
-                <p>구로 디지털 단지</p>
+                <h3>{{dataObj.name}}</h3>
+                <p>{{dataObj.location}}</p>
               </div>
               <div id="stat" class="flex-1 margin-r-l">
                 <div class="flex-container">
@@ -38,9 +38,7 @@
             <div class="d-line">
               <span class="span-size-info"><img src="@/assets/img/icons8-drag-52.png" width="20px"
                   height="20px" />&nbsp;&nbsp;사이즈 정보</span><br />
-              <span>신장&nbsp;&nbsp;180cm</span><br />
-              <span>신장&nbsp;&nbsp;180cm</span><br />
-              <span>신장&nbsp;&nbsp;180cm</span><br />
+              <span>{{dataObj.size}}</span><br />
             </div>
           </div>
           <div class="flex-1 margin-r-l">
@@ -62,7 +60,7 @@
           <div class="flex-1 mg-left-m">
             <br />
             <h3>2019</h3>
-            <p style="margin-top: 150px; font-weight: 350; font-size: 20px;">남성용 양복 1SET</p>
+            <p style="margin-top: 150px; font-weight: 350; font-size: 20px;">{{dataObj.name}}</p>
             <div style="padding: 5px; border-radius: 3px; height: 20px; width: 80px; background-color: #8bc058; color: #fafafa; font-size: 12px; margin-top: 180px;">
               <div class="vertical-container">
                 거래 신청
@@ -94,8 +92,7 @@
           </div>
         </div>
       </div>
-      <div class="flex-2">
-        <img src="@/assets/img/hunters-race-408744-unsplash.png" width="100%" height="100%" />
+      <div class="flex-2" v-bind:style="{ 'background-image': 'url(' + dataObj.image + ')' }">
       </div>
     </div>
   </div>
@@ -103,6 +100,7 @@
 
 <script>
 import TopBar from '@/components/TopBar'
+import axios from 'axios'
 
 export default {
   name: 'Item',
@@ -111,13 +109,25 @@ export default {
   },
   data () {
     return {
+      dataObj:{}
     }
   },
   created(){
+    this.fetchData()
   },
   mounted(){
   },
   methods: {
+    fetchData: function (){
+      axios.get('http://tg-test-dev.ap-northeast-2.elasticbeanstalk.com/v1/item/detail/'+this.$route.params.it_id)
+        .then(res => {
+          if(res.data.code == 200){
+            this.dataObj = res.data.data
+          }else{
+            alert(res.data.status);
+          }
+        })
+    }
   }
 }
 </script>
